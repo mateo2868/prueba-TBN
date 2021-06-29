@@ -1,0 +1,30 @@
+<div class="container">
+
+    <div class="button-top">
+        <button class="btn btn-info" routerLink="create-student">Crear Nuevo</button>
+    </div>
+    <table class="table">
+        <thead>
+            <tr>
+                <th>Nombre</th>
+                <th>Apellido</th>
+                <th>Edad</th>
+                <th></th>
+            </tr>
+        </thead>
+    
+        <tbody>
+            <tr *ngFor="let i of students">
+                <td>{{i.name}}</td>
+                <td>{{i.lastname}}</td>
+                <td>{{i.age}}</td>
+                <td>
+                    <button class="btn btn-success" [routerLink]="'update-student/'+i.id">Editar</button>
+                    <button class="btn btn-danger" (click)="deleteStudent(i.id)">Eliminar</button>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+
+    
+</div>
